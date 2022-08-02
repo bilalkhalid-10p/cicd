@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <ul>
-      <li v-for="data in dataArray" :key="data.number">{{data.name}}</li>
+      <li v-for="data in dataArray" :key="data.id">{{data.firstname}} {{data.lastname}}</li>
     </ul>
   </div>
 </template>
