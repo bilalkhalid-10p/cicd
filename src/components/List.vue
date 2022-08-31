@@ -5,9 +5,8 @@
 </template>
 
 <script>
-import DataService from '@/services/DataService';
 export default {
-  name: 'list',
+  name: 'list-component',
   data() {
     return {
     };
