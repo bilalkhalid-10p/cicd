@@ -1,5 +1,10 @@
 <template>
   <div class="hello">
+    <div>
+      <nav class="navbar navbar-expand-lg fixed-top row">
+        <router-link class="col" class-active="active" to="/list">List</router-link>
+      </nav>
+    </div>
     <h1>{{ msg }}</h1>
     <ul>
       <li v-for="data in dataArray" :key="data.id">{{data.firstname}} {{data.lastname}}</li>
@@ -11,11 +16,9 @@
 import DataService from '@/services/DataService';
 export default {
   name: 'home-component',
-  props: {
-    msg: String
-  },
   data() {
     return {
+      msg: 'Landing component',
       dataArray: []
     };
   },
