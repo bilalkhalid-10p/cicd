@@ -10,7 +10,7 @@
 <script>
 import DataService from '@/services/DataService';
 export default {
-  name: 'HelloWorld',
+  name: 'home',
   props: {
     msg: String
   },
