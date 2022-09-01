@@ -11,10 +11,10 @@
           <th>Action</th>
         </tr>
         <tr v-for="(item, index) in list" :key="index">
-          <td>{{item.employee_last_name}}</td>
           <td>{{item.employee_first_name}}</td>
+          <td>{{item.employee_last_name}}</td>
           <td>{{item.manager_first_name}}</td>
-          <td>{{item.manager_first_name}}</td>
+          <td>{{item.manager_last_name}}</td>
           <td><b-button @click="editUser(item)">Button</b-button></td>
         </tr>
       </table>
