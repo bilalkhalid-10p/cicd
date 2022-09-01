@@ -10,7 +10,7 @@
           <th>Manager Last Name</th>
           <th>Action</th>
         </tr>
-        <tr v-for="(item, index) in list" :key="index">
+        <tr v-for="(index, item) in list" :key="index">
           <td>{{item.Employee_first_name}}</td>
           <td>{{item.Employee_last_name}}</td>
           <td>{{item.Manager_first_name}}</td>
