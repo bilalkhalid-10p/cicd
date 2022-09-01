@@ -15,7 +15,7 @@
           <td>{{item.Employee_last_name}}</td>
           <td>{{item.Manager_first_name}}</td>
           <td>{{item.Manager_first_name}}</td>
-          <td></td>
+          <td><b-button @click="editUser()">Button</b-button></td>
         </tr>
       </table>
     </b-card>
