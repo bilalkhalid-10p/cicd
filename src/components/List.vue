@@ -18,7 +18,6 @@
           <td></td>
         </tr>
       </table>
-      <b-table striped hover :items="list"></b-table>
     </b-card>
   </div>
 </template>
