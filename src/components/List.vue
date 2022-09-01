@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="col-8 align-content-center">
     <b-card>
       <h1>Users Data</h1>
       <table class="table table-bordered table-striped table-sm">
@@ -10,12 +10,12 @@
           <th>Manager Last Name</th>
           <th>Action</th>
         </tr>
-        <tr v-for="(index, item) in list" :key="index">
-          <td>{{item.Employee_first_name}}</td>
-          <td>{{item.Employee_last_name}}</td>
-          <td>{{item.Manager_first_name}}</td>
-          <td>{{item.Manager_first_name}}</td>
-          <td><b-button @click="editUser()">Button</b-button></td>
+        <tr v-for="(item, index) in list" :key="index">
+          <td>{{item.employee_last_name}}</td>
+          <td>{{item.employee_first_name}}</td>
+          <td>{{item.manager_first_name}}</td>
+          <td>{{item.manager_first_name}}</td>
+          <td><b-button @click="editUser(item)">Button</b-button></td>
         </tr>
       </table>
     </b-card>
@@ -36,6 +36,11 @@ export default {
     return DataService.listData().then((res) => {
       this.list = res;
     })
+  },
+  methods: {
+    editUser(item) {
+      console.log(item);
+    }
   }
 }
 </script>
