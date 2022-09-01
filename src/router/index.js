@@ -1,6 +1,7 @@
 import {createRouter, createWebHistory } from 'vue-router'
 import helloWorld from '@/components/HelloWorld'
 import list from '@/components/List'
+import create from '@/components/Create'
 
 const routes = [
     {
@@ -12,6 +13,11 @@ const routes = [
         path: '/list',
         name: 'list',
         component: list
+    },
+    {
+        path: '/create',
+        name: 'create',
+        component: create
     }
 ]
 
