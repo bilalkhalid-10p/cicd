@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h1>this is list</h1>
+    <b-card>
+      <h1>Users Data</h1>
+      <b-table striped hover :items="list"></b-table>
+    </b-card>
   </div>
 </template>
 
