@@ -47,8 +47,10 @@ export default {
   },
   created() {
     return DataService.getManagersData().then((res) => {
-      this.managers = res;
-      this.managers.unshift({'id': '', 'first_name': 'Select', 'last_name': 'Manager'});
+      this.managers.unshift({'value': '', 'text': 'Select Manager'});
+      res.forEach(element => {
+        this.managers.push({'value': element.id, 'text': element.first_name + ' ' + element.last_name});
+      });
     })
   },
   methods: {
