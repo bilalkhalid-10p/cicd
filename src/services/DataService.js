@@ -27,6 +27,6 @@ function listData() {
 
 function createUser(data) {
     return api
-        .post(`/create`, data)
+        .post(`/create`, { data })
         .then(response => response.data);
 }
