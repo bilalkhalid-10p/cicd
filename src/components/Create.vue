@@ -63,7 +63,7 @@ export default {
         name: this.name.trim(),
         manager: this.manager
       }
-      return DataService.getManagersData(data).then((res) => {
+      return DataService.createUser(data).then((res) => {
         console.log(res);
       })
     }
