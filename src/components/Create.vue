@@ -5,7 +5,7 @@
         <h1>Create User</h1>
       </div>
 
-      <b-form @submit="createUser()">
+      <b-form @submit.prevent="createUser()" >
         <b-form-group
             id="input-group-1"
             label="Select Manager"
