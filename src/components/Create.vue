@@ -13,16 +13,25 @@
         >
           <b-form-select
               id="input-3"
-              v-model="manager"
+              v-model="manager_id"
               :options="managers"
           ></b-form-select>
         </b-form-group>
 
-        <b-form-group id="input-group-2" label="Employee Name" label-for="input-2">
+        <b-form-group id="input-group-2" label="First Name" label-for="input-2">
           <b-form-input
               id="input-2"
-              v-model="name"
-              placeholder="Enter name"
+              v-model="first_name"
+              placeholder="Enter first name"
+              required
+          ></b-form-input>
+        </b-form-group>
+
+        <b-form-group id="input-group-2" label="Last Name" label-for="input-2">
+          <b-form-input
+              id="input-2"
+              v-model="last_name"
+              placeholder="Enter last name"
               required
           ></b-form-input>
         </b-form-group>
@@ -40,9 +49,10 @@ export default {
   name: 'create-component',
   data() {
     return {
-      manager: '',
+      manager_id: '',
       managers: [],
-      name: ''
+      first_name: '',
+      last_name: ''
     };
   },
   created() {
@@ -55,14 +65,15 @@ export default {
   },
   methods: {
     createUser() {
-      if(this.name.trim() === '') {
+      if(this.first_name.trim() === '' && this.last_name.trim() === '') {
         alert('Enter valid name');
         return false;
       }
 
       let data = {
-        name: this.name.trim(),
-        manager_id: this.manager
+        first_name: this.first_name.trim(),
+        last_name: this.last_name.trim(),
+        manager_id: this.manager_id
       };
 
       return DataService.createUser(data).then((res) => {
