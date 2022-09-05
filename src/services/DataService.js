@@ -2,8 +2,9 @@ import api from '@/services/ApiService';
 
 export default {
     getData,
-    getParentsData,
-    listData
+    getManagersData,
+    listData,
+    createUser
 };
 
 function getData() {
@@ -12,14 +13,20 @@ function getData() {
         .then(response => response.data);
 }
 
-function getParentsData() {
+function getManagersData() {
     return api
-        .get(`/parents`)
+        .get(`/managers`)
         .then(response => response.data);
 }
 
 function listData() {
     return api
         .get(`/list`)
+        .then(response => response.data);
+}
+
+function createUser(data) {
+    return api
+        .post(`/create`, data)
         .then(response => response.data);
 }
