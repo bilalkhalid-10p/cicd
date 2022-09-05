@@ -61,7 +61,7 @@ export default {
       }
       let data = {
         name: this.name.trim(),
-        manager: this.manager
+        manager_id: this.manager
       }
       return DataService.createUser(data).then((res) => {
         console.log(res);
