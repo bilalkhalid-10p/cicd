@@ -59,11 +59,14 @@ export default {
         alert('Enter valid name');
         return false;
       }
-      let data = {
+
+      let data = JSON.stringify({
         name: this.name.trim(),
         manager_id: this.manager
-      }
+      });
+
       return DataService.createUser(data).then((res) => {
+        console.log('response');
         console.log(res);
       })
     }
