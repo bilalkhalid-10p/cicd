@@ -60,10 +60,10 @@ export default {
         return false;
       }
 
-      let data = JSON.stringify({
+      let data = {
         name: this.name.trim(),
         manager_id: this.manager
-      });
+      };
 
       return DataService.createUser(data).then((res) => {
         console.log('response');
