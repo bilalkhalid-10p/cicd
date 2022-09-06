@@ -1,7 +1,7 @@
 import Axios from 'axios';
 
 const instance = Axios.create({
-    baseURL: 'http://localhost:8081/',
+    baseURL: 'https://desolate-mountain-37815.herokuapp.com/',
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
