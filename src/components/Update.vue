@@ -2,10 +2,10 @@
   <div class="container" style="text-align: left;">
     <b-card class="col-md-12">
       <div class="col-12">
-        <h1>Create User</h1>
+        <h1>Update User</h1>
       </div>
 
-      <b-form @submit.prevent="createUser()" >
+      <b-form @submit.prevent="updateUser()" >
         <b-form-group
             id="input-group-1"
             label="Select Manager"
@@ -61,10 +61,11 @@ export default {
       res.forEach(element => {
         this.managers.push({'value': element.id, 'text': element.first_name + ' ' + element.last_name});
       });
+      this.getUserData(this.$route.params.id);
     })
   },
   methods: {
-    createUser() {
+    updateUser() {
       if(this.first_name.trim() === '' && this.last_name.trim() === '') {
         alert('Enter valid name');
         return false;
@@ -73,11 +74,25 @@ export default {
       let data = {
         first_name: this.first_name.trim().charAt(0).toUpperCase() + this.first_name.slice(1),
         last_name: this.last_name.trim().charAt(0).toUpperCase() + this.last_name.slice(1),
-        manager_id: this.manager_id
+        manager_id: this.manager_id,
+        user_id: this.$route.params.id
       };
 
-      return DataService.createUser(data).then(() => {
+      return DataService.updateUser(data).then(() => {
         this.$router.push({ name: "list" });
+      })
+    },
+    getUserData(userId) {
+      let data = {
+        userId: userId,
+      };
+
+      return DataService.getUserData(data).then((res) => {
+        if(res.length > 0) {
+          this.manager_id = res[0].manager_id === 0 ? '' : res[0].manager_id;
+          this.first_name = res[0].first_name;
+          this.last_name = res[0].last_name;
+        }
       })
     }
   }

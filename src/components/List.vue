@@ -48,10 +48,15 @@ export default {
   },
   methods: {
     editUser(item) {
-      console.log(item);
+      this.$router.push({ path: `/update/${item.employee_id}` })
     },
     deleteUser(item) {
-      console.log(item);
+      return DataService.deleteUser(item.employee_id).then(() => {
+        const result = this.list.findIndex(x => x.employee_id === item.employee_id);
+        if(result !== -1) {
+          this.list.splice(result, 1);
+        }
+      })
     }
   }
 }
