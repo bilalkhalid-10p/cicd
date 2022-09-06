@@ -76,9 +76,8 @@ export default {
         manager_id: this.manager_id
       };
 
-      return DataService.createUser(data).then((res) => {
-        console.log('response');
-        console.log(res);
+      return DataService.createUser(data).then(() => {
+        this.$router.push({ name: "list" });
       })
     }
   }
